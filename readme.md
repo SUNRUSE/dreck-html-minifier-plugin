@@ -1,6 +1,6 @@
 # Dreck HTML Minifier Plugin [![License](https://img.shields.io/github/license/sunruse/dreck-html-minifier-plugin.svg)](https://github.com/sunruse/dreck-html-minifier-plugin/blob/master/license) [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 
-Minifies all `*.html` source and intermediate files to equivalent `*.html` dist files (e.g. `./src/a/b.html` and `./ephemeral/intermediate/a/b.html` minify to `./dist/a/b.html`).
+Minifies HTML documents.
 
 ## Dependencies
 
@@ -40,7 +40,7 @@ jobs:
         node-version: 12
     ###############################
 
-    - run: make --file ./submodules/dreck/makefile
+    - run: make --file ./dreck/makefile
       shell: bash
     - if: github.event_name == 'release' && github.event.action == 'created'
       uses: softprops/action-gh-release@v1
@@ -53,5 +53,14 @@ jobs:
 Run the following in a Bash shell at the root of your project:
 
 ```bash
-git submodule add https://github.com/sunruse/dreck-html-minifier-plugin submodules/plugins/html-minifier
+git submodule add https://github.com/sunruse/dreck-html-minifier-plugin plugins/html-minifier
 ```
+## Input
+
+This plugin minifies every HTML document in the `DRECK_HTML_MINIFIER_INPUT_HTML_PATHS` Make variable.
+
+## Output
+
+This plugin writes an equivalent HTML document for each input HTML document.  For example, if `DRECK_HTML_MINIFIER_INPUT_HTML_PATHS` contained `./a/b-c.pug`, `./plugins/html-minifier/generated/a/b-c.html` would be written to disk.
+
+Their paths are listed in the `DRECK_HTML_MINIFIER_OUTPUT_HTML_PATHS` Make variable, space separated.

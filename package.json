@@ -1,6 +1,6 @@
 {
   "name": "dreck-html-minifier-plugin",
-  "description": "Minifies all *.html source and intermediate files to equivalent *.html dist files (e.g. ./src/a/b.html and ./ephemeral/intermediate/a/b.html minify to ./dist/a/b.html). ",
+  "description": "Minifies HTML documents.",
   "version": "0.0.0",
   "engines": {
     "node": ">=10.19.0"
@@ -12,7 +12,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/sunruse/dreck-kit"
+    "url": "https://github.com/SUNRUSE/dreck-html-minifier-plugin"
   },
   "license": "MIT",
   "dependencies": {
