@@ -55,12 +55,13 @@ Run the following in a Bash shell at the root of your project:
 ```bash
 git submodule add https://github.com/sunruse/dreck-html-minifier-plugin plugins/html-minifier
 ```
+
 ## Input
 
 This plugin minifies every HTML document in the `DRECK_HTML_MINIFIER_INPUT_HTML_PATHS` Make variable.
 
 ## Output
 
-This plugin writes an equivalent HTML document for each input HTML document.  For example, if `DRECK_HTML_MINIFIER_INPUT_HTML_PATHS` contained `./a/b-c.pug`, `./plugins/html-minifier/generated/a/b-c.html` would be written to disk.
+This plugin writes an equivalent HTML document for each input HTML document.  For example, if `DRECK_HTML_MINIFIER_INPUT_HTML_PATHS` contained `./a/b-c.html`, `./plugins/html-minifier/generated/a/b-c.html` would be written to disk.
 
 Their paths are listed in the `DRECK_HTML_MINIFIER_OUTPUT_HTML_PATHS` Make variable, space separated.
